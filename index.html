@@ -3,28 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Bish-Bosh</title>
 </head>
 <body>
-    
-    <script>
-        for (let i = 1; i <= 100; i++) {
-            if (i % 3 == 0) {
-                if (i % 4 == 0) {
-                    console.log("Bish-Bosh");
-                }
-                else
-                {
-                    console.log("Bish");
-                }
-            }
-            else if (i % 4 == 0) {
-                console.log("Bosh");
-            }
-            else {
-                console.log(i);
-            }
-        }
-    </script>
+    <header>
+        <h1>Bish-Bosh 2.0</h1>
+    </header>
+    <main>
+        <div id="description">
+            <p>Bish-Bosh listar alla tal mellan 1 och 100, med vissa undantag: Om talet är jämnt delbart
+                med 3 listas ‘Bish’ istället för talet. Om talet är jämnt delbart med 4 listas ‘Bosh’ istället för
+                talet. Om talet är jämnt delbart med både med 3 och 4 skrivs “Bish-Bosh” istället för talet</p>
+        </div>
+        <div id="inputs">
+            <label for="bish">Bish:</label>
+            <input type="text" id="bish" name="bish" value="3" placeholder="Positivt heltal">
+            <label for="bosh">Bosh:</label>
+            <input type="text" id="bosh" name="bosh" value="4" placeholder="Positivt heltal">
+            <label for="loop">Längd:</label>
+            <input type="text" id="loop" name="loop" value="100" placeholder="Positivt heltal">
+        </div>
+        <div id="output">
+            <ul id="bishbosh"></ul>
+        </div>
+    </main>
+    <footer>
+        <span>Copyright 2024-10-14</span>
+        <span>Skapad av: Mikael Pros</span>
+    </footer>
+    <script src="bishbosh.js"></script>
 </body>
 </html>
