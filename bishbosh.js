@@ -1,22 +1,27 @@
-document.getElementById("bish").addEventListener('input', function (evt) {
+document.querySelector("#bish").addEventListener('input', function (e) {
     bishBosh();
 });
-document.getElementById("bosh").addEventListener('input', function (evt) {
+document.querySelector("#bosh").addEventListener('input', function (e) {
     bishBosh();
 });
-document.getElementById("loop").addEventListener('input', function (evt) {
+document.querySelector("#loop").addEventListener('input', function (e) {
     bishBosh();
 });
 
 function bishBosh(){
-    let output = document.getElementById("bishbosh");
+    let output = document.querySelector("#bishbosh");
     output.innerHTML = "";
     output.style.color = "black";
-    const bish = document.getElementById("bish").value;
-    const bosh = document.getElementById("bosh").value;
-    const loop = document.getElementById("loop").value;
+    const bish = document.querySelector("#bish").value;
+    const bosh = document.querySelector("#bosh").value;
+    const loop = document.querySelector("#loop").value;
     if (bish.trim() == "" || bosh.trim() == "" || loop.trim() == ""){
         node('Bish, Bosh och Längd får inte vara tomma.');
+        output.style.color = "red";
+        return;
+    }
+    if (bish != Math.round(bish) || bosh != Math.round(bosh) || loop != Math.round(loop)){
+        node('Bish, Bosh och Längd ange endast heltal.');
         output.style.color = "red";
         return;
     }
@@ -45,7 +50,7 @@ function bishBosh(){
 }
 
 function node(text){
-    let output = document.getElementById("bishbosh");
+    let output = document.querySelector("#bishbosh");
     let node = document.createElement("li");
     let textnode = document.createTextNode(text);
     node.appendChild(textnode);
